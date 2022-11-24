@@ -1,0 +1,750 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A289FF1D-E84D-4866-AC6A-A43E365F4E8B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ISEC</RootNamespace>
+    <AssemblyName>ISEC</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>\\DESKTOP-R75OLJL\Users\ThiikoRV\Desktop\publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>true</UpdateRequired>
+    <MapFileExtensions>false</MapFileExtensions>
+    <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>19</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ISECJPG.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>D045E7FE6C16BD707A0C26F12DF328CB796EDBCB</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>ISEC_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=3.2.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.3.2.1\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data, Version=5.0.2938.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <HintPath>..\packages\dotConnect.Express.for.SQLite.6.0.0\lib\Devart.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.SQLite, Version=6.0.0.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <HintPath>..\packages\dotConnect.Express.for.SQLite.6.0.0\lib\Devart.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.2, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.2\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Sqlite, Version=6.0.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Sqlite.Core.6.0.1\lib\netstandard2.0\Microsoft.Data.Sqlite.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.26.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="RestSharp, Version=104.3.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.104.3.3\lib\net4\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Retrofit.Net, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Retrofit.Net.1.0.0.0\lib\net45\Retrofit.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_v2, Version=2.0.4.976, Culture=neutral, PublicKeyToken=8226ea5df37bcae9, processorArchitecture=MSIL">
+      <HintPath>..\packages\SQLitePCLRaw.bundle_green.2.0.4\lib\net461\SQLitePCLRaw.batteries_v2.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.core, Version=2.0.6.1341, Culture=neutral, PublicKeyToken=1488e028ca7ab535, processorArchitecture=MSIL">
+      <HintPath>..\packages\SQLitePCLRaw.core.2.0.6\lib\netstandard2.0\SQLitePCLRaw.core.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.nativelibrary, Version=2.0.4.976, Culture=neutral, PublicKeyToken=502ed628492ab262, processorArchitecture=MSIL">
+      <HintPath>..\packages\SQLitePCLRaw.bundle_green.2.0.4\lib\net461\SQLitePCLRaw.nativelibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.provider.dynamic_cdecl, Version=2.0.4.976, Culture=neutral, PublicKeyToken=b68184102cba0b3b, processorArchitecture=MSIL">
+      <HintPath>..\packages\SQLitePCLRaw.provider.dynamic_cdecl.2.0.4\lib\netstandard2.0\SQLitePCLRaw.provider.dynamic_cdecl.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.115.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <HintPath>..\packages\System.Data.SQLite.x86.1.0.115.0\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.115.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.115.0\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.115.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.115.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.6.0.0\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=6.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.6.0.2\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="Zen.Barcode.Core, Version=3.1.0.0, Culture=neutral, PublicKeyToken=b5ae55aa76d2d9de, processorArchitecture=MSIL">
+      <HintPath>..\packages\Zen.Barcode.Core.2.0.0\lib\net45\Zen.Barcode.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Alumnos\frmActualizarAlumno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alumnos\frmActualizarAlumno.Designer.cs">
+      <DependentUpon>frmActualizarAlumno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alumnos\frmHistorialPagos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alumnos\frmHistorialPagos.Designer.cs">
+      <DependentUpon>frmHistorialPagos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="API\Permisos\IPermisoService.cs" />
+    <Compile Include="API\Roles\IRolService.cs" />
+    <Compile Include="API\RolUsuario\IUserRolService.cs" />
+    <Compile Include="API\Service.cs" />
+    <Compile Include="API\Users\IUserService.cs" />
+    <Compile Include="Arqueo\frmArqueos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Arqueo\frmArqueos.Designer.cs">
+      <DependentUpon>frmArqueos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Arqueo\frmPruebas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Arqueo\frmPruebas.Designer.cs">
+      <DependentUpon>frmPruebas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Carreras\frmActualizarCarrera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Carreras\frmActualizarCarrera.Designer.cs">
+      <DependentUpon>frmActualizarCarrera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Carreras\frmAgregarCarrera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Carreras\frmAgregarCarrera.Designer.cs">
+      <DependentUpon>frmAgregarCarrera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Carreras\frmCarreras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Carreras\frmCarreras.Designer.cs">
+      <DependentUpon>frmCarreras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Claves\frmActualizarClave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Claves\frmActualizarClave.Designer.cs">
+      <DependentUpon>frmActualizarClave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Claves\frmAgregarClave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Claves\frmAgregarClave.Designer.cs">
+      <DependentUpon>frmAgregarClave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Claves\frmClaves.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Claves\frmClaves.Designer.cs">
+      <DependentUpon>frmClaves.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Converciones\Conversores.cs" />
+    <Compile Include="Cuotas\frmActualizarCuota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cuotas\frmActualizarCuota.Designer.cs">
+      <DependentUpon>frmActualizarCuota.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cuotas\frmAgregarCuota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cuotas\frmAgregarCuota.Designer.cs">
+      <DependentUpon>frmAgregarCuota.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cuotas\frmCuotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cuotas\frmCuotas.Designer.cs">
+      <DependentUpon>frmCuotas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DbLocal\ConnectionLocal.cs" />
+    <Compile Include="DbLocal\Interfaces\IAccesoUsuarioLocalRepository.cs" />
+    <Compile Include="DbLocal\Interfaces\IAlumnoLocalRepository.cs" />
+    <Compile Include="DbLocal\Interfaces\ICarreraLocalRepository.cs" />
+    <Compile Include="DbLocal\Interfaces\IClaveLocalRepository.cs" />
+    <Compile Include="DbLocal\Interfaces\ICobranzaDetalleLocalRepository.cs" />
+    <Compile Include="DbLocal\Interfaces\ICobranzaLocalRepository.cs" />
+    <Compile Include="DbLocal\Interfaces\IConceptoLocalRepository.cs" />
+    <Compile Include="DbLocal\Interfaces\ICuotaRepository.cs" />
+    <Compile Include="DbLocal\Interfaces\IGastoLocalRepository.cs" />
+    <Compile Include="DbLocal\Interfaces\IGrupoLocalRepository.cs" />
+    <Compile Include="DbLocal\Interfaces\IHorarioLocalRepository.cs" />
+    <Compile Include="DbLocal\Interfaces\IModuloLocalRepository.cs" />
+    <Compile Include="DbLocal\Interfaces\IPlanLocalRepository.cs" />
+    <Compile Include="DbLocal\Interfaces\IPuestoLocalRepository.cs" />
+    <Compile Include="DbLocal\Interfaces\IRolLocalRepository.cs" />
+    <Compile Include="DbLocal\Interfaces\IRolUsuarioRepository.cs" />
+    <Compile Include="DbLocal\Interfaces\IUsuarioLocalRepository.cs" />
+    <Compile Include="DbLocal\Repositorios\AccesoUsuarioLocalRepository.cs" />
+    <Compile Include="DbLocal\Repositorios\AlumnoLocalRepository.cs" />
+    <Compile Include="DbLocal\Repositorios\CarreraLocalRepository.cs" />
+    <Compile Include="DbLocal\Repositorios\ClaveLocalRepository.cs" />
+    <Compile Include="DbLocal\Repositorios\CobranzaDetalleLocalRepository.cs" />
+    <Compile Include="DbLocal\Repositorios\CobranzaLocalRepository.cs" />
+    <Compile Include="DbLocal\Repositorios\ConceptoLocalRepository.cs" />
+    <Compile Include="DbLocal\Repositorios\CuotaLocalRepository.cs" />
+    <Compile Include="DbLocal\Repositorios\GastoLocalRepository.cs" />
+    <Compile Include="DbLocal\Repositorios\GrupoLocalRepository.cs" />
+    <Compile Include="DbLocal\Repositorios\HorarioLocalRepository.cs" />
+    <Compile Include="DbLocal\Repositorios\ModuloLocalRepository.cs" />
+    <Compile Include="DbLocal\Repositorios\PlanLocalRepository.cs" />
+    <Compile Include="DbLocal\Repositorios\PuestoLocalRepository.cs" />
+    <Compile Include="DbLocal\Repositorios\RolLocalRepository.cs" />
+    <Compile Include="DbLocal\Repositorios\RolUsuarioLocalRepository.cs" />
+    <Compile Include="DbLocal\Repositorios\UsuarioLocalRepository.cs" />
+    <Compile Include="DbLocal\Services\GenericService.cs" />
+    <Compile Include="frmSync.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSync.Designer.cs">
+      <DependentUpon>frmSync.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fuentes\GeneralFonts.cs" />
+    <Compile Include="Gastos\frmAgregarGasto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gastos\frmAgregarGasto.Designer.cs">
+      <DependentUpon>frmAgregarGasto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gastos\frmGastos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gastos\frmGastos.Designer.cs">
+      <DependentUpon>frmGastos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alumnos\frmAccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alumnos\frmAccion.Designer.cs">
+      <DependentUpon>frmAccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Planes\frmActualizarPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Planes\frmActualizarPlan.Designer.cs">
+      <DependentUpon>frmActualizarPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Planes\frmAgregarPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Planes\frmAgregarPlan.Designer.cs">
+      <DependentUpon>frmAgregarPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Planes\frmPlanes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Planes\frmPlanes.Designer.cs">
+      <DependentUpon>frmPlanes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Puestos\frmActualizarPuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Puestos\frmActualizarPuesto.Designer.cs">
+      <DependentUpon>frmActualizarPuesto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Puestos\frmAgregarPuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Puestos\frmAgregarPuesto.Designer.cs">
+      <DependentUpon>frmAgregarPuesto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Puestos\frmPuestos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Puestos\frmPuestos.Designer.cs">
+      <DependentUpon>frmPuestos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Recibos\ReciboGeneral.cs" />
+    <Compile Include="Roles\frmAccesoModulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Roles\frmAccesoModulo.Designer.cs">
+      <DependentUpon>frmAccesoModulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Roles\frmAsignarRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Roles\frmAsignarRol.Designer.cs">
+      <DependentUpon>frmAsignarRol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Roles\frmAgregarRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Roles\frmAgregarRol.Designer.cs">
+      <DependentUpon>frmAgregarRol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Roles\frmEditarPermiso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Roles\frmEditarPermiso.Designer.cs">
+      <DependentUpon>frmEditarPermiso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Roles\frmEditarRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Roles\frmEditarRol.Designer.cs">
+      <DependentUpon>frmEditarRol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Roles\frmRoles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Roles\frmRoles.Designer.cs">
+      <DependentUpon>frmRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios\frmActualizarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios\frmActualizarUsuario.Designer.cs">
+      <DependentUpon>frmActualizarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grupos\frmActualizarGrupo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grupos\frmActualizarGrupo.Designer.cs">
+      <DependentUpon>frmActualizarGrupo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grupos\frmAgregarGrupo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grupos\frmAgregarGrupo.Designer.cs">
+      <DependentUpon>frmAgregarGrupo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grupos\frmGrupos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grupos\frmGrupos.Designer.cs">
+      <DependentUpon>frmGrupos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Horarios\frmActualizarHorario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Horarios\frmActualizarHorario.Designer.cs">
+      <DependentUpon>frmActualizarHorario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Horarios\frmAgregarHorario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Horarios\frmAgregarHorario.Designer.cs">
+      <DependentUpon>frmAgregarHorario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios\frmAgregarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios\frmAgregarUsuario.Designer.cs">
+      <DependentUpon>frmAgregarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alumnos\frmAlumnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alumnos\frmAlumnos.Designer.cs">
+      <DependentUpon>frmAlumnos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Horarios\frmHorario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Horarios\frmHorario.Designer.cs">
+      <DependentUpon>frmHorario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\frmIniciarCobranza.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\frmIniciarCobranza.Designer.cs">
+      <DependentUpon>frmIniciarCobranza.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenu.Designer.cs">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alumnos\frmPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alumnos\frmPago.Designer.cs">
+      <DependentUpon>frmPago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alumnos\frmRegistroAlumno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alumnos\frmRegistroAlumno.Designer.cs">
+      <DependentUpon>frmRegistroAlumno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSpinner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSpinner.Designer.cs">
+      <DependentUpon>frmSpinner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alumnos\frmTotal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alumnos\frmTotal.Designer.cs">
+      <DependentUpon>frmTotal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios\frmUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios\frmUsuarios.Designer.cs">
+      <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Connection.cs" />
+    <Compile Include="Functions.cs" />
+    <Compile Include="NetWork.cs" />
+    <Compile Include="Observer\IObserverUsuarioLocal.cs" />
+    <Compile Include="Observer\ISubjectUsuarioLocal.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThemeColor.cs" />
+    <Compile Include="UserSession.cs" />
+    <Compile Include="Utilidades\Utilities.cs" />
+    <Compile Include="ViewModels\AccesoViewModel.cs" />
+    <Compile Include="ViewModels\ClaveViewModel.cs" />
+    <Compile Include="ViewModels\RolViewModel.cs" />
+    <Compile Include="ViewModels\SemanaViewModel.cs" />
+    <Compile Include="ViewModels\TotalViewModel.cs" />
+    <EmbeddedResource Include="Alumnos\frmActualizarAlumno.resx">
+      <DependentUpon>frmActualizarAlumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alumnos\frmHistorialPagos.resx">
+      <DependentUpon>frmHistorialPagos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Arqueo\frmArqueos.resx">
+      <DependentUpon>frmArqueos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Arqueo\frmPruebas.resx">
+      <DependentUpon>frmPruebas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Carreras\frmActualizarCarrera.resx">
+      <DependentUpon>frmActualizarCarrera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Carreras\frmAgregarCarrera.resx">
+      <DependentUpon>frmAgregarCarrera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Carreras\frmCarreras.resx">
+      <DependentUpon>frmCarreras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Claves\frmActualizarClave.resx">
+      <DependentUpon>frmActualizarClave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Claves\frmAgregarClave.resx">
+      <DependentUpon>frmAgregarClave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Claves\frmClaves.resx">
+      <DependentUpon>frmClaves.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cuotas\frmActualizarCuota.resx">
+      <DependentUpon>frmActualizarCuota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cuotas\frmAgregarCuota.resx">
+      <DependentUpon>frmAgregarCuota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cuotas\frmCuotas.resx">
+      <DependentUpon>frmCuotas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSync.resx">
+      <DependentUpon>frmSync.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gastos\frmAgregarGasto.resx">
+      <DependentUpon>frmAgregarGasto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gastos\frmGastos.resx">
+      <DependentUpon>frmGastos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alumnos\frmAccion.resx">
+      <DependentUpon>frmAccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planes\frmActualizarPlan.resx">
+      <DependentUpon>frmActualizarPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planes\frmAgregarPlan.resx">
+      <DependentUpon>frmAgregarPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planes\frmPlanes.resx">
+      <DependentUpon>frmPlanes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Puestos\frmActualizarPuesto.resx">
+      <DependentUpon>frmActualizarPuesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Puestos\frmAgregarPuesto.resx">
+      <DependentUpon>frmAgregarPuesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Puestos\frmPuestos.resx">
+      <DependentUpon>frmPuestos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Roles\frmAccesoModulo.resx">
+      <DependentUpon>frmAccesoModulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Roles\frmAsignarRol.resx">
+      <DependentUpon>frmAsignarRol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Roles\frmAgregarRol.resx">
+      <DependentUpon>frmAgregarRol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Roles\frmEditarPermiso.resx">
+      <DependentUpon>frmEditarPermiso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Roles\frmEditarRol.resx">
+      <DependentUpon>frmEditarRol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Roles\frmRoles.resx">
+      <DependentUpon>frmRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios\frmActualizarUsuario.resx">
+      <DependentUpon>frmActualizarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grupos\frmActualizarGrupo.resx">
+      <DependentUpon>frmActualizarGrupo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grupos\frmAgregarGrupo.resx">
+      <DependentUpon>frmAgregarGrupo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grupos\frmGrupos.resx">
+      <DependentUpon>frmGrupos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Horarios\frmActualizarHorario.resx">
+      <DependentUpon>frmActualizarHorario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Horarios\frmAgregarHorario.resx">
+      <DependentUpon>frmAgregarHorario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios\frmAgregarUsuario.resx">
+      <DependentUpon>frmAgregarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alumnos\frmAlumnos.resx">
+      <DependentUpon>frmAlumnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Horarios\frmHorario.resx">
+      <DependentUpon>frmHorario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\frmIniciarCobranza.resx">
+      <DependentUpon>frmIniciarCobranza.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenu.resx">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alumnos\frmPago.resx">
+      <DependentUpon>frmPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alumnos\frmRegistroAlumno.resx">
+      <DependentUpon>frmRegistroAlumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSpinner.resx">
+      <DependentUpon>frmSpinner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alumnos\frmTotal.resx">
+      <DependentUpon>frmTotal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios\frmUsuarios.resx">
+      <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="dbisec.sqlite.db" />
+    <None Include="ISEC_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Imagenes\alumno.jpg" />
+    <Content Include="ISECJPG.ico" />
+    <Content Include="loader.gif" />
+    <Content Include="loading.gif" />
+    <Content Include="Logotipo\ISECJPG.jpg" />
+    <None Include="Resources\schools.png" />
+    <None Include="Resources\school.png" />
+    <None Include="Resources\gastos.png" />
+    <None Include="Resources\gasto.png" />
+    <None Include="Resources\arqueo.png" />
+    <None Include="Resources\puestos.png" />
+    <None Include="Resources\roles.png" />
+    <None Include="Resources\claves.png" />
+    <None Include="Resources\carreras.png" />
+    <None Include="Resources\cuota.png" />
+    <None Include="Resources\plan.png" />
+    <None Include="Resources\people.png" />
+    <None Include="Resources\clock-solid.png" />
+    <None Include="Resources\users-solid.png" />
+    <None Include="Resources\users.png" />
+    <None Include="Resources\h.png" />
+    <None Include="Resources\home.png" />
+    <None Include="Resources\notify.png" />
+    <None Include="Resources\delete.jpg" />
+    <None Include="Resources\ISEC.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Turnos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{ddff292a-bd18-4a73-b99b-f8e52126d320}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\SQLitePCLRaw.lib.e_sqlite3.2.0.4\build\net461\SQLitePCLRaw.lib.e_sqlite3.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SQLitePCLRaw.lib.e_sqlite3.2.0.4\build\net461\SQLitePCLRaw.lib.e_sqlite3.targets'))" />
+    <Error Condition="!Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\System.Text.Json.6.0.2\build\System.Text.Json.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Text.Json.6.0.2\build\System.Text.Json.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="..\packages\SQLitePCLRaw.lib.e_sqlite3.2.0.4\build\net461\SQLitePCLRaw.lib.e_sqlite3.targets" Condition="Exists('..\packages\SQLitePCLRaw.lib.e_sqlite3.2.0.4\build\net461\SQLitePCLRaw.lib.e_sqlite3.targets')" />
+  <Import Project="..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
+  <Import Project="..\packages\System.Text.Json.6.0.2\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.2\build\System.Text.Json.targets')" />
+</Project>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppISEC.MainPage"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             >
+ 
+        <yummy:PancakeView x:Name="gradient" Margin="0,32,0,0"  
+                               HorizontalOptions="FillAndExpand" HeightRequest="150" CornerRadius="10">
+            <yummy:PancakeView.BackgroundGradientStops>
+                <yummy:GradientStopCollection>
+                    <yummy:GradientStop x:Name="backgroundGradientColor1" Color="LightBlue"   Offset="0" />
+                    <yummy:GradientStop x:Name="backgroundGradientColor2"  Offset="1" Color="LightCyan" />
+                </yummy:GradientStopCollection>
+            </yummy:PancakeView.BackgroundGradientStops>
+            <Label Text="There are no mistakes, only happy accidents." TextColor="White" HorizontalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="Center" />
+        </yummy:PancakeView> 
+
+</ContentPage>

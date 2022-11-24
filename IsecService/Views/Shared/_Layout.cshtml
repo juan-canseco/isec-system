@@ -1,0 +1,219 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @*@Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")*@
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+          rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+          rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.11.0/mdb.min.css"
+          rel="stylesheet" />
+    <link href="~/Content/jquery.loadingModal.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.1.9/sweetalert2.min.css" integrity="sha512-cyIcYOviYhF0bHIhzXWJQ/7xnaBuIIOecYoPZBgJHQKFPo+TOBA+BY1EnTpmM8yKDU4ZdI3UGccNGCEUdfbBqw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="~/Content/styleBody.css" rel="stylesheet" />
+    <link href="~/Content/styleSwitch.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!--Main Navigation-->
+    <header>
+        <!-- Sidebar -->
+
+        <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white" style="overflow-y:auto;">
+            <div class="position-sticky">
+                <div class="list-group list-group-flush mx-3 mt-4" id="menuSidebar">
+                    <a href="#"
+                       class="list-group-item list-group-item-action py-2 ripple"
+                       aria-current="true" data-controller="Dashboard" data-action="Index">
+                        <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Dashboard</span>
+                    </a>
+                    <a href="#" data-controller="Roles" data-action="Index" class="list-group-item list-group-item-action py-2 ripple ">
+                        <i class="fas fa-lock fa-fw me-3"></i><span>Roles</span>
+                    </a>
+                    <a href="#" data-controller="Usuarios" data-action="Index" class="list-group-item list-group-item-action py-2 ripple"><i class="fas fa-users fa-fw me-3"></i><span>Usuarios</span></a>
+
+                </div>
+            </div>
+        </nav>
+        <!-- Sidebar -->
+        <!-- Navbar-->
+        <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+            <div class="container-fluid justify-content-between">
+                <!-- Left elements -->
+                <div class="d-flex">
+                    <!-- Brand -->
+                    <a class="navbar-brand me-2 mb-1 d-flex align-items-center" href="#">
+                        <img src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
+                             height="20"
+                             alt="MDB Logo"
+                             loading="lazy"
+                             style="margin-top: 2px;" />
+                    </a>
+
+                    <!-- Search form -->
+                    <form class="input-group w-auto my-auto d-none d-sm-flex">
+                        <input autocomplete="off"
+                               type="search"
+                               class="form-control rounded"
+                               placeholder="Search"
+                               style="min-width: 125px;" />
+                        <span class="input-group-text border-0 d-none d-lg-flex">
+                            <i class="fas fa-search"></i>
+                        </span>
+                    </form>
+                </div>
+                <!-- Left elements -->
+                <!-- Center elements -->
+                <ul class="navbar-nav flex-row d-none d-md-flex">
+                    <h3>@ViewBag.Title</h3>
+                </ul>
+                <!-- Center elements -->
+                <!-- Right elements -->
+                <ul class="navbar-nav flex-row">
+                    <li class="nav-item me-3 me-lg-1">
+                        <a class="nav-link d-sm-flex align-items-sm-center" href="#">
+                            <img src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp"
+                                 class="rounded-circle"
+                                 height="22"
+                                 alt="Black and White Portrait of a Man"
+                                 loading="lazy" />
+                            <strong id="txtNombre" class="d-none d-sm-block ms-1"></strong>
+                        </a>
+                    </li>
+                    <li class="nav-item me-3 me-lg-1">
+                        <a class="nav-link" href="#">
+                            <span><i class="fas fa-plus-circle fa-lg"></i></span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown me-3 me-lg-1">
+                        <a class="nav-link dropdown-toggle hidden-arrow"
+                           href="#"
+                           id="navbarDropdownMenuLink"
+                           role="button"
+                           data-mdb-toggle="dropdown"
+                           aria-expanded="false">
+                            <i class="fas fa-comments fa-lg"></i>
+
+                            <span class="badge rounded-pill badge-notification bg-danger">6</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end"
+                            aria-labelledby="navbarDropdownMenuLink">
+                            <li>
+                                <a class="dropdown-item" href="#">Cerrar sesión</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown me-3 me-lg-1">
+                        <a class="nav-link dropdown-toggle hidden-arrow"
+                           href="#"
+                           id="navbarDropdownMenuLink"
+                           role="button"
+                           data-mdb-toggle="dropdown"
+                           aria-expanded="false">
+                            <i class="fas fa-bell fa-lg"></i>
+                            <span class="badge rounded-pill badge-notification bg-danger">12</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end"
+                            aria-labelledby="navbarDropdownMenuLink">
+                            <li>
+                                <a class="dropdown-item" href="#">Some news</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">Another news</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown me-3 me-lg-1">
+                        <a class="nav-link dropdown-toggle hidden-arrow"
+                           href="#"
+                           id="navbarDropdownMenuLink"
+                           role="button"
+                           data-mdb-toggle="dropdown"
+                           aria-expanded="false">
+                            <i class="fas fa-chevron-circle-down fa-lg"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end"
+                            aria-labelledby="navbarDropdownMenuLink">
+                            <li>
+                                <a class="dropdown-item" id="btnLogout" href="#">Cerrar sesión</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- Right elements -->
+            </div>
+        </nav>
+        <!-- Navbar -->
+
+    </header>
+    <!--Main layout-->
+    <main style="margin-top: 58px;">
+        <div class="container pt-4"></div>
+    </main>
+    <!--Main layout-->
+    <!--Main Navigation-->
+
+    <div class="bodyContent">
+
+
+        @RenderBody()
+        <hr />
+        <!--<footer class="fixed-bottom">
+            <div class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">-->
+        <!-- Copyright -->
+        <!--<div class="text-white mb-3 mb-md-0">
+            Copyright © @DateTime.Now.Year. All rights reserved.
+        </div>-->
+        <!-- Copyright -->
+        <!-- Right -->
+        <!--<div>
+            <a href="#!" class="text-white me-4">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#!" class="text-white me-4">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#!" class="text-white me-4">
+                <i class="fab fa-google"></i>
+            </a>
+            <a href="#!" class="text-white">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>-->
+        <!-- Right -->
+        <!--</div>
+        </footer>-->
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    <!-- MDB -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.11.0/mdb.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.1.9/sweetalert2.all.min.js" integrity="sha512-IZ95TbsPTDl3eT5GwqTJH/14xZ2feLEGJRbII6bRKtE/HC6x3N4cHye7yyikadgAsuiddCY2+6gMntpVHL1gHw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="@RouteJs.RouteJsHandler.HandlerUrl"></script>
+    <script src="~/Scripts/jquery.loadingModal.min.js"></script>
+
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js" integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    @*@Scripts.Render("~/bundles/bootstrap")*@
+
+    @RenderSection("scripts", required: false)
+    <script src="~/Scripts/Global/globalFunctions.js"></script>
+
+</body>
+</html>

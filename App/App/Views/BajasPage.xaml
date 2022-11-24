@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Views.BajasPage"
+             Appearing="ContentPage_Appearing"
+             Title="Bajas"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <yummy:PancakeView CornerRadius="5">
+                <CollectionView  x:Name="cUsers"> 
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Margin="15" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="33.3*"></ColumnDefinition>
+                                    <ColumnDefinition Width="33.3*"></ColumnDefinition>
+                                    <ColumnDefinition Width="33.3*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Label TextColor="Black" Grid.Column="0" Text="{Binding Id}"></Label>
+                                <Label TextColor="Black" Grid.Column="1" Text="{Binding Nombre}"></Label>
+                                <Label TextColor="Black" Grid.Column="2" Text="{Binding LastUpdate}"></Label>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </yummy:PancakeView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
