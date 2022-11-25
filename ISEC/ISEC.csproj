@@ -201,6 +201,12 @@
     <Compile Include="API\RolUsuario\IUserRolService.cs" />
     <Compile Include="API\Service.cs" />
     <Compile Include="API\Users\IUserService.cs" />
+    <Compile Include="Arqueo\frmArqueo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Arqueo\frmArqueo.Designer.cs">
+      <DependentUpon>frmArqueo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Arqueo\frmArqueos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,6 +218,12 @@
     </Compile>
     <Compile Include="Arqueo\frmPruebas.Designer.cs">
       <DependentUpon>frmPruebas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Arqueo\frmTemporal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Arqueo\frmTemporal.Designer.cs">
+      <DependentUpon>frmTemporal.cs</DependentUpon>
     </Compile>
     <Compile Include="Carreras\frmActualizarCarrera.cs">
       <SubType>Form</SubType>
@@ -525,11 +537,17 @@
     <EmbeddedResource Include="Alumnos\frmHistorialPagos.resx">
       <DependentUpon>frmHistorialPagos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Arqueo\frmArqueo.resx">
+      <DependentUpon>frmArqueo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Arqueo\frmArqueos.resx">
       <DependentUpon>frmArqueos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Arqueo\frmPruebas.resx">
       <DependentUpon>frmPruebas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Arqueo\frmTemporal.resx">
+      <DependentUpon>frmTemporal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Carreras\frmActualizarCarrera.resx">
       <DependentUpon>frmActualizarCarrera.cs</DependentUpon>

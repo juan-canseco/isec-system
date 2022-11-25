@@ -42,7 +42,7 @@ namespace ISEC
                         switch (formType)
                         {
                             case FormType.Arqueo:
-                                menu.OpenChildForm(new frmArqueos(),sender);
+                                menu.OpenChildForm(new frmArqueo(),sender);
                                  break;  
                             case FormType.Alumnos:
                                 if (!isAnotherPago)

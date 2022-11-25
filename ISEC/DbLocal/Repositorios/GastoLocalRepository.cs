@@ -14,6 +14,7 @@ namespace ISEC.DbLocal.Repositorios
         ConceptoLocalRepository conceptoRepo = new ConceptoLocalRepository();
         string connection = ConnectionLocal.ConecctionString;
         decimal suma = 0;
+
         public bool Add(GastoLocal gastoLocal)
         {
             bool inserted = false;
@@ -72,6 +73,25 @@ namespace ISEC.DbLocal.Repositorios
 
             }
         }
+
+        public decimal Total()
+        {
+            using (var conn = new SQLiteConnection(connection))
+            {
+                conn.Open();
+                using (var cmd = new SQLiteCommand("SELECT SUM(total) FROM gasto", conn))
+                {
+                    var result = cmd.ExecuteScalar();
+                    if (result != null)
+                    {
+                        return decimal.Parse(result.ToString());
+                    }
+
+                    return 0;
+                }
+            }
+        }
+
 
         public List<GastoLocal> GetAll()
         {

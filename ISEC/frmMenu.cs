@@ -386,7 +386,7 @@ namespace ISEC
         } 
         private void btnArqueo_Click(object sender, EventArgs e)
         { 
-            OpenChildForm(new frmArqueos(), sender);
+            OpenChildForm(new frmArqueos(this), sender);
         } 
         private void btnHome_Click(object sender, EventArgs e)
         { 

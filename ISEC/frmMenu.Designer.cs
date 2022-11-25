@@ -470,7 +470,7 @@
             this.rbEstado.ForeColor = System.Drawing.Color.White;
             this.rbEstado.Location = new System.Drawing.Point(64, 70);
             this.rbEstado.Name = "rbEstado";
-            this.rbEstado.Size = new System.Drawing.Size(75, 24);
+            this.rbEstado.Size = new System.Drawing.Size(68, 22);
             this.rbEstado.TabIndex = 4;
             this.rbEstado.TabStop = true;
             this.rbEstado.Text = "Online";
@@ -503,9 +503,9 @@
             this.lblFecha.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblFecha.Font = new System.Drawing.Font("Malgun Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFecha.ForeColor = System.Drawing.Color.White;
-            this.lblFecha.Location = new System.Drawing.Point(982, 0);
+            this.lblFecha.Location = new System.Drawing.Point(993, 0);
             this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(141, 35);
+            this.lblFecha.Size = new System.Drawing.Size(130, 30);
             this.lblFecha.TabIndex = 1;
             this.lblFecha.Text = "000000000";
             // 
@@ -516,7 +516,7 @@
             this.lblTitle.ForeColor = System.Drawing.Color.White;
             this.lblTitle.Location = new System.Drawing.Point(6, 43);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(85, 45);
+            this.lblTitle.Size = new System.Drawing.Size(75, 38);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "ISEC";
             // 
@@ -565,7 +565,7 @@
             this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.818182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHora.Location = new System.Drawing.Point(64, 7);
             this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(72, 18);
+            this.lblHora.Size = new System.Drawing.Size(72, 17);
             this.lblHora.TabIndex = 1;
             this.lblHora.Text = "00:00:00";
             // 
@@ -584,7 +584,7 @@
             this.lblTituloProgreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.163636F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTituloProgreso.Location = new System.Drawing.Point(3, 7);
             this.lblTituloProgreso.Name = "lblTituloProgreso";
-            this.lblTituloProgreso.Size = new System.Drawing.Size(20, 17);
+            this.lblTituloProgreso.Size = new System.Drawing.Size(16, 16);
             this.lblTituloProgreso.TabIndex = 2;
             this.lblTituloProgreso.Text = "...";
             // 
@@ -603,7 +603,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.818182F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(21, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(156, 18);
+            this.label1.Size = new System.Drawing.Size(147, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Kardex for windows";
             // 

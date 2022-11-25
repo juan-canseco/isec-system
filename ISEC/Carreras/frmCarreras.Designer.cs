@@ -76,9 +76,9 @@
             // 
             this.txtFiltro.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.txtFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.12727F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFiltro.Location = new System.Drawing.Point(0, 7);
+            this.txtFiltro.Location = new System.Drawing.Point(0, 10);
             this.txtFiltro.Name = "txtFiltro";
-            this.txtFiltro.Size = new System.Drawing.Size(960, 27);
+            this.txtFiltro.Size = new System.Drawing.Size(960, 24);
             this.txtFiltro.TabIndex = 32;
             this.txtFiltro.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtFiltro_KeyUp);
             // 

@@ -7,6 +7,9 @@ using ISEC.DbLocal.Interfaces;
 using DataAccess.Local;
 using System.Data.SQLite;
 using System.Data;
+using System.Globalization;
+using ISEC.Utilidades;
+
 namespace ISEC.DbLocal.Repositorios
 {
     public class CobranzaLocalRepository : ICobranzaLocalRepository
@@ -50,6 +53,7 @@ namespace ISEC.DbLocal.Repositorios
         {
             throw new NotImplementedException();
         }
+
 
         public int Exists()
         {

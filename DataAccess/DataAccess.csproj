@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Local\AccesoUsuarioLocal.cs" />
     <Compile Include="Local\AlumnoLocal.cs" />
+    <Compile Include="Local\ArqueoLocal.cs" />
     <Compile Include="Local\CarreraLocal.cs" />
     <Compile Include="Local\ClaveLocal.cs" />
     <Compile Include="Local\CobranzaDetalleLocal.cs" />
