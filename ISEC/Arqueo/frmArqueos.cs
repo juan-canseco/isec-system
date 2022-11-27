@@ -24,11 +24,10 @@ namespace ISEC.Arqueo
             _menu = menu;
         }
 
-
         public void Reload()
         {
             lblTotalEnCaja.Text = cobranza.SaldoCaja.ToString("n2");
-            lblGastosTotales.Text = gastoRepo.Total().ToString("n2");
+            lblGastosTotales.Text = gastoRepo.getGastoTotalByCobranza(UserSession.Instancia.Cobranza.Id).ToString("n2");
         }
 
         private void frmArqueos_Load(object sender, EventArgs e)
@@ -38,7 +37,8 @@ namespace ISEC.Arqueo
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-           
+            var addForm = new frmAgregarArqueo(menu);
+            addForm.ShowDialog();
         }
     }
 }

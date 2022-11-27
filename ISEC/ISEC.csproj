@@ -201,6 +201,12 @@
     <Compile Include="API\RolUsuario\IUserRolService.cs" />
     <Compile Include="API\Service.cs" />
     <Compile Include="API\Users\IUserService.cs" />
+    <Compile Include="Arqueo\frmAgregarArqueo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Arqueo\frmAgregarArqueo.Designer.cs">
+      <DependentUpon>frmAgregarArqueo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Arqueo\frmArqueo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -283,6 +289,7 @@
     <Compile Include="DbLocal\ConnectionLocal.cs" />
     <Compile Include="DbLocal\Interfaces\IAccesoUsuarioLocalRepository.cs" />
     <Compile Include="DbLocal\Interfaces\IAlumnoLocalRepository.cs" />
+    <Compile Include="DbLocal\Interfaces\IArqueoLocalRepository.cs" />
     <Compile Include="DbLocal\Interfaces\ICarreraLocalRepository.cs" />
     <Compile Include="DbLocal\Interfaces\IClaveLocalRepository.cs" />
     <Compile Include="DbLocal\Interfaces\ICobranzaDetalleLocalRepository.cs" />
@@ -300,6 +307,7 @@
     <Compile Include="DbLocal\Interfaces\IUsuarioLocalRepository.cs" />
     <Compile Include="DbLocal\Repositorios\AccesoUsuarioLocalRepository.cs" />
     <Compile Include="DbLocal\Repositorios\AlumnoLocalRepository.cs" />
+    <Compile Include="DbLocal\Repositorios\ArqueoLocalRepository.cs" />
     <Compile Include="DbLocal\Repositorios\CarreraLocalRepository.cs" />
     <Compile Include="DbLocal\Repositorios\ClaveLocalRepository.cs" />
     <Compile Include="DbLocal\Repositorios\CobranzaDetalleLocalRepository.cs" />
@@ -536,6 +544,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Alumnos\frmHistorialPagos.resx">
       <DependentUpon>frmHistorialPagos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Arqueo\frmAgregarArqueo.resx">
+      <DependentUpon>frmAgregarArqueo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Arqueo\frmArqueo.resx">
       <DependentUpon>frmArqueo.cs</DependentUpon>

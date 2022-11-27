@@ -12,6 +12,7 @@ namespace ISEC.DbLocal.Interfaces
         GastoLocal Get(int id);
         bool Add(GastoLocal gastoLocal);
         bool Update(GastoLocal gastoLocal);
+        decimal getGastoTotalByCobranza(int idCobranza);
 
     }
 }

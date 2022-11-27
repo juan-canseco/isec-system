@@ -74,19 +74,19 @@ namespace ISEC.DbLocal.Repositorios
             }
         }
 
-        public decimal Total()
+        public decimal getGastoTotalByCobranza(int idCobranza)
         {
             using (var conn = new SQLiteConnection(connection))
             {
                 conn.Open();
-                using (var cmd = new SQLiteCommand("SELECT SUM(total) FROM gasto", conn))
+                using (var cmd = new SQLiteCommand("SELECT SUM(total) FROM gasto WHERE fkcobranza = @idcobranza", conn))
                 {
+                    cmd.Parameters.AddWithValue("@idcobranza", idCobranza);
                     var result = cmd.ExecuteScalar();
-                    if (result != null)
+                    if (result != null && !(result is DBNull))
                     {
                         return decimal.Parse(result.ToString());
                     }
-
                     return 0;
                 }
             }
