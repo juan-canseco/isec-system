@@ -9,9 +9,9 @@ namespace DataAccess.Local
     public class ArqueoLocal
     {
         public int Id { get; set; }
+        public int Folio { get; set; }
         public int FkCobranza { get; set; }
         public int FkUsuario { get; set; }
-
         public int NM10C { get; set; }
         public int NM20C { get; set; }
         public int NM50C { get; set; }
@@ -25,6 +25,10 @@ namespace DataAccess.Local
         public int NB200P { get; set; }
         public int NB500P { get; set; }
         public int NB1000P { get; set; }
-
+        public decimal RetiroEfectivo { get; set; }
+        public decimal FondoEnCaja { get; set; }
+        public decimal SubtotalEfectivo { get; set; }
+        public decimal TotalEfectivo { get; set; }
+        public DateTime FechaCreacion { get; set; }
     }
 }

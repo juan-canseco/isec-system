@@ -14,5 +14,6 @@ namespace ISEC.DbLocal.Interfaces
         bool Add(ArqueoLocal arqueoLocal);
         bool Update(ArqueoLocal arqueoLocal);
         bool Desactive(ArqueoLocal arqueoLocal);
+        int GenerateFolio();
     }
 }

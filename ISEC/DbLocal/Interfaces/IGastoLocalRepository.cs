@@ -9,6 +9,7 @@ namespace ISEC.DbLocal.Interfaces
     public interface IGastoLocalRepository
     {
         List<GastoLocal> GetAll();
+        List<GastoLocal> GetAllByCobranza(int idCobranza);
         GastoLocal Get(int id);
         bool Add(GastoLocal gastoLocal);
         bool Update(GastoLocal gastoLocal);

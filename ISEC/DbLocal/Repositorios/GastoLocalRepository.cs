@@ -125,6 +125,40 @@ namespace ISEC.DbLocal.Repositorios
             }
         }
 
+        public List<GastoLocal> GetAllByCobranza(int idCobranza)
+        {
+            List<GastoLocal> gastos = new List<GastoLocal>();
+            using (var conn = new SQLiteConnection(connection))
+            {
+                conn.Open();
+                using (var cmd = new SQLiteCommand("select * from gasto WHERE fkcobranza = @fkcobranza   order by id desc", conn))
+                {
+                    cmd.Parameters.AddWithValue("@fkcobranza", idCobranza);
+                    var rd = cmd.ExecuteReader();
+                    suma = 0;
+                    while (rd.Read())
+                    {
+                        GastoLocal gasto = new GastoLocal();
+                        gasto.Id = int.Parse(rd["id"].ToString());
+                        gasto.Descripcion = rd["descripcion"] as string;
+                        gasto.Precio = decimal.Parse(rd["precio"].ToString());
+                        gasto.Cantidad = int.Parse(rd["cantidad"].ToString());
+                        gasto.Total = decimal.Parse(rd["total"].ToString());
+                        gasto.Fecha = rd["fecha"] as string;
+                        gasto.FkConcepto = int.Parse(rd["fkconcepto"].ToString());
+                        gasto.Concepto = conceptoRepo.Get(gasto.FkConcepto).Descripcion;
+                        gasto.FkCobranza = int.Parse(rd["fkcobranza"].ToString());
+                        gasto.Folio = cobranzaRepo.Get(gasto.FkCobranza).Folio;
+                        suma += gasto.Total;
+                        gastos.Add(gasto);
+                    }
+                }
+                return gastos;
+
+            }
+        }
+
+
         public bool Update(GastoLocal gastoLocal)
         {
             bool updated = false;
@@ -148,5 +182,7 @@ namespace ISEC.DbLocal.Repositorios
                 return updated;
             }
         }
+
+     
     }
 }

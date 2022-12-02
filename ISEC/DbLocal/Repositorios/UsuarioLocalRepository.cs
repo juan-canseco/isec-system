@@ -225,6 +225,33 @@ namespace ISEC.DbLocal.Repositorios
             }
         }
 
+
+        public UsuarioLocal GetByUsername(string username)
+        {
+            UsuarioLocal user = null;
+            using (var conn = new SQLiteConnection(cadena))
+            {
+                conn.Open();
+                using (var cmd = new SQLiteCommand("select * from usuarios WHERE username=@username LIMIT 1", conn))
+                {
+                    cmd.Parameters.AddWithValue("@username", username);
+                    var rd = cmd.ExecuteReader();
+                    if (rd.Read())
+                    {
+                        user = new UsuarioLocal();
+                        user.Id = int.Parse(rd["id"].ToString());
+                        user.Nombre = rd["nombre"] as string;
+                        user.Username = rd["username"] as string;
+                        user.Password = rd["password"] as string;
+                        user.puestoid = int.Parse(rd["puestoid"].ToString());
+                        user.Puesto = puestoLocalRepository.Get(user.puestoid).Descripcion;
+                    }
+                }
+                return user;
+            }
+        }
+
+
         public List<UsuarioLocal> GetAllNoSync()
         {
             List<UsuarioLocal> users = new List<UsuarioLocal>();
@@ -304,5 +331,6 @@ namespace ISEC.DbLocal.Repositorios
                 return user;
             }
         }
+
     }
 }

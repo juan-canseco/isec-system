@@ -13,6 +13,7 @@ namespace ISEC.DbLocal.Interfaces
         List<UsuarioLocal> GetAllNoSync();
         UsuarioLocal GetLast();
         UsuarioLocal Get(int id);
+        UsuarioLocal GetByUsername(string username);
         void UpdateSync(List<int> id);
         UsuarioLocal Login (string username,string password);
         UsuarioLocal LoginByPassword (string password); 
