@@ -1,10 +1,9 @@
 ﻿using DataAccess.Local;
-using Devart.Data.SQLite;
+using System.Data.SQLite;
+using System.Data;
 using ISEC.DbLocal.Interfaces;
-using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,7 +30,7 @@ namespace ISEC.DbLocal.Repositorios
                 sb.AppendLine("(");
                 sb.AppendLine("folio, fkcobranza, fkusuario, nm10c, nm20c, nm50c, nm1p,");
                 sb.AppendLine("nm2p, nm5p, nm10p, nb20p, nb50p, nb100p, nb200p, nb500p, nb1000p,");
-                sb.AppendLine("retiroefectivo, fondoencaja, subtotalefectivo, totalefectivo, fechacreacion");
+                sb.AppendLine("retiroefectivo, fondoendcaja, subtotalefectivo, totalefectivo, fechacreacion");
                 sb.AppendLine(") ");
                 sb.AppendLine("VALUES ");
                 sb.AppendLine("(");
@@ -132,7 +131,7 @@ namespace ISEC.DbLocal.Repositorios
             arqueoLocal.NB500P = int.Parse(reader["nb500p"].ToString());
             arqueoLocal.NB1000P = int.Parse(reader["nb1000p"].ToString());
             arqueoLocal.RetiroEfectivo = decimal.Parse(reader["retiroefectivo"].ToString());
-            arqueoLocal.FondoEnCaja = decimal.Parse(reader["fondoencaja"].ToString());
+            arqueoLocal.FondoEnCaja = decimal.Parse(reader["fondoendcaja"].ToString());
             arqueoLocal.SubtotalEfectivo = decimal.Parse(reader["subtotalefectivo"].ToString());
             arqueoLocal.TotalEfectivo = decimal.Parse(reader["totalefectivo"].ToString());
             arqueoLocal.FechaCreacion = StringToDateTime(reader["fechacreacion"].ToString());

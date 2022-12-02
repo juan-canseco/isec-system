@@ -91,8 +91,11 @@ namespace ISEC.Arqueo
             // Retiro efectivo cuando dinero vas a retirar
             // Fondo de caja, cuanto dinero quieres dejar en la caja 
 
-
-
+            var newArqueo = BuildArqueo();
+            _arqueoLocalRepository.Add(newArqueo);
+            MessageBox.Show("Arqueo agregado correctamente");
+            _reloadArqueos();
+            this.Close();
         }
 
         #region NumericUpDown Quantity Updates

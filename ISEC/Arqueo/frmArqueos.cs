@@ -28,14 +28,10 @@ namespace ISEC.Arqueo
 
         public void Reload()
         {
-            var thread = new Thread(p =>
-            {
-                gvArqueos.DataSource = null;
-                gvArqueos.DataSource = arqueoLocalRepository.GetAll();
-                lblTotalEnCaja.Text = cobranza.SaldoCaja.ToString("n2");
-                lblGastosTotales.Text = gastoRepo.getGastoTotalByCobranza(UserSession.Instancia.Cobranza.Id).ToString("n2");
-            });
-            thread.Start();
+            gvArqueos.DataSource = null;
+            gvArqueos.DataSource = arqueoLocalRepository.GetAll();
+            lblTotalEnCaja.Text = cobranza.SaldoCaja.ToString("n2");
+            lblGastosTotales.Text = gastoRepo.getGastoTotalByCobranza(UserSession.Instancia.Cobranza.Id).ToString("n2");
         }
 
         private void frmArqueos_Load(object sender, EventArgs e)
