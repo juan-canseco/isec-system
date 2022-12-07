@@ -30,6 +30,7 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblFiltro = new System.Windows.Forms.Label();
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.gvArqueos = new System.Windows.Forms.DataGridView();
@@ -59,34 +60,46 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1370, 661);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblFiltro);
             this.panel1.Controls.Add(this.txtFiltro);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1364, 27);
+            this.panel1.Size = new System.Drawing.Size(1364, 60);
             this.panel1.TabIndex = 0;
+            // 
+            // lblFiltro
+            // 
+            this.lblFiltro.AutoSize = true;
+            this.lblFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.32727F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFiltro.Location = new System.Drawing.Point(3, 8);
+            this.lblFiltro.Name = "lblFiltro";
+            this.lblFiltro.Size = new System.Drawing.Size(257, 29);
+            this.lblFiltro.TabIndex = 82;
+            this.lblFiltro.Text = "FILTRAR POR FOLIO";
             // 
             // txtFiltro
             // 
             this.txtFiltro.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txtFiltro.Location = new System.Drawing.Point(0, 7);
+            this.txtFiltro.Location = new System.Drawing.Point(0, 40);
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(1364, 20);
             this.txtFiltro.TabIndex = 0;
+            this.txtFiltro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFiltro_KeyPress);
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.gvArqueos);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 36);
+            this.panel2.Location = new System.Drawing.Point(3, 69);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1364, 390);
             this.panel2.TabIndex = 1;
@@ -99,6 +112,7 @@
             this.gvArqueos.Name = "gvArqueos";
             this.gvArqueos.Size = new System.Drawing.Size(1364, 390);
             this.gvArqueos.TabIndex = 0;
+            this.gvArqueos.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gvArqueos_CellMouseClick);
             // 
             // panel3
             // 
@@ -108,9 +122,9 @@
             this.panel3.Controls.Add(this.lblTotalEnCaja);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(3, 432);
+            this.panel3.Location = new System.Drawing.Point(3, 465);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1364, 226);
+            this.panel3.Size = new System.Drawing.Size(1364, 193);
             this.panel3.TabIndex = 2;
             // 
             // panel4
@@ -119,7 +133,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel4.Location = new System.Drawing.Point(1164, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(200, 226);
+            this.panel4.Size = new System.Drawing.Size(200, 193);
             this.panel4.TabIndex = 85;
             // 
             // btnAdd
@@ -211,5 +225,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label lblFiltro;
     }
 }

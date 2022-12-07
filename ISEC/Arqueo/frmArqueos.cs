@@ -29,9 +29,17 @@ namespace ISEC.Arqueo
         public void Reload()
         {
             gvArqueos.DataSource = null;
-            gvArqueos.DataSource = arqueoLocalRepository.GetAll();
+            gvArqueos.DataSource = arqueoLocalRepository.GetAllByFolio(txtFiltro.Text);
             lblTotalEnCaja.Text = cobranza.SaldoCaja.ToString("n2");
             lblGastosTotales.Text = gastoRepo.getGastoTotalByCobranza(UserSession.Instancia.Cobranza.Id).ToString("n2");
+        }
+
+
+        private void ReloadGrid()
+        {
+
+            gvArqueos.DataSource = null;
+            gvArqueos.DataSource = arqueoLocalRepository.GetAllByFolio(txtFiltro.Text);
         }
 
         private void frmArqueos_Load(object sender, EventArgs e)
@@ -43,6 +51,23 @@ namespace ISEC.Arqueo
         {
             var addForm = new frmAgregarArqueo(menu, Reload);
             addForm.ShowDialog();
+        }
+
+        private void txtFiltro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ReloadGrid();
+        }
+
+        private void gvArqueos_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                var selected = gvArqueos.Rows[e.RowIndex].DataBoundItem as ArqueoLocal;
+                var arqueoId = selected.Id;
+
+                var arqueoDetalle = new frmArqueoDetalle(arqueoId);
+                arqueoDetalle.ShowDialog();
+            }
         }
     }
 }

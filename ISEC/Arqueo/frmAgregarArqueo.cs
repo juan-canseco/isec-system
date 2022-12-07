@@ -50,6 +50,20 @@ namespace ISEC.Arqueo
             lblGastos.Text = "$" +_gastoLocalRepository.getGastoTotalByCobranza(_cobranzaLocal.Id).ToString("n2");
             gvGastos.DataSource = null;
             gvGastos.DataSource = _gastoLocalRepository.GetAllByCobranza(_cobranzaLocal.Id);
+
+            UpdateQuantity(0.10m, txtCantidadP10, txtImporteMP1);
+            UpdateQuantity(0.20m, txtCantidadP20, txtImporteMP2);
+            UpdateQuantity(0.50m, txtCantidadP50, txtImporteMP5);
+            UpdateQuantity(1.0m, txtCantidad1Peso, txtImporteM1);
+            UpdateQuantity(2.0m, txtCantidad2Pesos, txtImporteM2);
+            UpdateQuantity(5.0m, txtCantidad5Pesos, txtImporteM5);
+            UpdateQuantity(10.0m, txtCantidad10Pesos, txtImporteM10);
+            UpdateQuantity(20.0m, txtBillete20, txtImporteB20);
+            UpdateQuantity(50.0m, txtBillete50, txtImporteB50);
+            UpdateQuantity(100.0m, txtBillete100, txtImporteB100);
+            UpdateQuantity(200.0m, txtBillete200, txtImporteB200);
+            UpdateQuantity(500.0m, txtBillete500, txtImporteB500);
+            UpdateQuantity(1000.0m, txtBillete1000, txtImporteB1000);
         }
 
         private void frmAgregarArqueo_Load(object sender, EventArgs e)
@@ -137,17 +151,13 @@ namespace ISEC.Arqueo
             lblQuedaEfectivo.Text = "$" + _quedaEfectivo.ToString("n2");
             lblSubtotal.Text = "$" + _quedaEfectivo.ToString("n2");
         }
+
+
+
         private void UpdateQuantity(decimal moneyValue, NumericUpDown upDown, TextBox textBox)
         {
-            if (upDown.Value > 0)
-            {
-                var total = moneyValue * upDown.Value;
-                textBox.Text = "$"+total.ToString("n2");
-            }
-            else
-            {
-                textBox.Text = "";
-            }
+            var total = moneyValue * upDown.Value;
+            textBox.Text = "$" + total.ToString("n2");
             Sum();
         }
 
@@ -266,6 +276,11 @@ namespace ISEC.Arqueo
         private void txtFondoCaja_KeyPress(object sender, KeyPressEventArgs e)
         {
             ValidateNumbersInput(sender, e);
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

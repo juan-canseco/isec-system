@@ -146,12 +146,34 @@ namespace ISEC.DbLocal.Repositorios
                 using (var cmd = new SQLiteCommand("select * from arqueo where id = @id", conn))
                 {
                     cmd.CommandType = CommandType.Text;
+                    cmd.Parameters.AddWithValue("@id", id);
                     var rd = cmd.ExecuteReader();
                     if (rd.Read())
                     {
                         return BuildArqueoFromReader(rd);
                     }
                     return null;
+                }
+            }
+        }
+
+        public List<ArqueoLocal> GetAllByFolio(string folio)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new SQLiteCommand("SELECT * FROM arqueo WHERE folio LIKE @folio", conn))
+                {
+                    List<ArqueoLocal> arqueos = new List<ArqueoLocal>();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Parameters.AddWithValue("@folio", "%" + folio + "%");
+                    var rd = cmd.ExecuteReader();
+                    while (rd.Read())
+                    {
+                        var arqueo = BuildArqueoFromReader(rd);
+                        arqueos.Add(arqueo);
+                    }
+                    return arqueos;
                 }
             }
         }
@@ -180,5 +202,6 @@ namespace ISEC.DbLocal.Repositorios
         {
             throw new NotImplementedException();
         }
+
     }
 }

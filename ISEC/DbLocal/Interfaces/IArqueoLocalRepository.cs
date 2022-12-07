@@ -9,6 +9,8 @@ namespace ISEC.DbLocal.Interfaces
 {
     public interface IArqueoLocalRepository
     {
+
+        List<ArqueoLocal> GetAllByFolio(string folio);
         List<ArqueoLocal> GetAll();
         ArqueoLocal Get(int id);
         bool Add(ArqueoLocal arqueoLocal);
